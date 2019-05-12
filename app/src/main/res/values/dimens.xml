@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="fab_margin">10dp</dimen>
+
+    <dimen name="small_font_size">12sp</dimen>
+    <dimen name="normal_font_size">14sp</dimen>
+    <dimen name="medium_font_size">16sp</dimen>
+
+    <dimen name="note_card_padding">10dp</dimen>
+    <dimen name="note_card_date_padding_bottom">5dp</dimen>
+</resources>

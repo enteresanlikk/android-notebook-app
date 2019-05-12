@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Not Defteri</string>
+    <string name="title_activity_add">Ekle</string>
+    <string name="title_activity_edit">Düzenle</string>
+
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+    <string name="delete">Sil</string>
+    <string name="add">Ekle</string>
+    <string name="update">Güncelle</string>
+    <string name="edit">Düzenle</string>
+    <string name="share">Paylaş</string>
+    <string name="select">Seç</string>
+    <string name="cancel">İptal</string>
+
+    <string name="title">Başlık</string>
+    <string name="content">İçerik</string>
+    <string name="reminder"><b>Hatırlatıcı: </b></string>
+    <string name="reminder_add">Hatırlatıcı ekle</string>
+    <string name="reminder_remove">Hatırlatıcıyı kaldır</string>
+    <string name="reminder_date">Tarih</string>
+    <string name="reminder_time">Saat</string>
+    <string name="last_update">Son Güncelleme: </string>
+
+    <string name="delete_all_your_notes">Bütün notlarınız silinsin mi?</string>
+    <string name="delete_your_note">Notunuz silinsin mi?</string>
+
+    <string name="notYok">Notunuz bulunamadı.</string>
+
+    <string name="menu_delete_all">Hepsini sil</string>
+
+    <string name="noEmptyTitle">Başlık boş bırakılamaz.</string>
+    <string name="noEmptyContent">İçerik boş bırakılamaz.</string>
+    <string name="successAdded">Notunuz eklendi.</string>
+    <string name="errorAdded">Notunuz eklenirken hata oluştu.</string>
+    <string name="successUpdated">Notunuz güncellendi.</string>
+    <string name="errorUpdated">Notunuz güncellenirken hata oluştu.</string>
+    <string name="successAllDeleted">Notlarınız silindi.</string>
+    <string name="errorAllDeleted">Notlarınız silinirken hata oluştu.</string>
+    <string name="successDeleted">Notunuz silindi.</string>
+    <string name="errorDeleted">Notunuz silinirken hata oluştu.</string>
+    <string name="noEmptyReminderDate">Hatırlatıcı tarihi boş bırakılamaz.</string>
+    <string name="noEmptyReminderTime">Hatırlatıcı saati boş bırakılamaz.</string>
+</resources>

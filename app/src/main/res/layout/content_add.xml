@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AddActivity"
+    tools:showIn="@layout/activity_add"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp">
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:hint="@string/title"
+                    android:gravity="left"
+                    android:id="@+id/edt_title"
+                    android:textSize="14sp"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textMultiLine"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:hint="@string/content"
+                    android:id="@+id/edt_content"
+                    android:textSize="14sp"/>
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/cb_reminder_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reminder_add"/>
+
+            <LinearLayout
+                android:id="@+id/reminder_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btn_reminder_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/reminder_date"
+                    android:background="@drawable/button_selector_reverse"
+                    android:textColor="@drawable/text_selector_reverse"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp"/>
+
+                <Button
+                    android:id="@+id/btn_reminder_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/reminder_time"
+                    android:background="@drawable/button_selector_reverse"
+                    android:textColor="@drawable/text_selector_reverse"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp"
+                    android:enabled="false"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
