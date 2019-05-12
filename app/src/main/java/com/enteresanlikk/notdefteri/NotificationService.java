@@ -25,8 +25,6 @@ public class NotificationService extends Service {
     Database db;
     Functions f;
 
-    String CHANNEL_ID = "Furkan ID"; //Channel ID
-    String CHANNEL_NAME = "Furkan ADI"; //Channel Ad
     int NOTIFICATION_ID = 52; //Notification ID
     NotificationManager manager;
 
@@ -43,7 +41,7 @@ public class NotificationService extends Service {
         f = new Functions(NotificationService.this);
 
         manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel channel = new NotificationChannel(f.CHANNEL_ID, f.CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
         channel.enableVibration(true);
         manager.createNotificationChannel(channel);
 
@@ -83,12 +81,14 @@ public class NotificationService extends Service {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
                 notificationIntent, 0);
 
-        Notification notification = new Notification.Builder(this, CHANNEL_ID)
+        Notification notification = new Notification.Builder(this, f.CHANNEL_ID)
                 .setContentTitle(title)
                 .setContentText(content)
                 .setSmallIcon(R.mipmap.icon)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
+                .setStyle(new Notification.BigTextStyle()
+                            .bigText(content))
                 .build();
 
         manager.notify(NOTIFICATION_ID, notification);
@@ -101,7 +101,7 @@ public class NotificationService extends Service {
 
     @Override
     public void onDestroy() {
-        manager.deleteNotificationChannel(CHANNEL_ID);
+        manager.deleteNotificationChannel(f.CHANNEL_ID);
         super.onDestroy();
 
         timer.cancel();

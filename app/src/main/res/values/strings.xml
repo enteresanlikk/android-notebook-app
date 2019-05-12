@@ -20,7 +20,7 @@
     <string name="reminder_remove">Hatırlatıcıyı kaldır</string>
     <string name="reminder_date">Tarih</string>
     <string name="reminder_time">Saat</string>
-    <string name="last_update">Son Güncelleme: </string>
+    <string name="last_update">Son güncelleme: </string>
 
     <string name="delete_all_your_notes">Bütün notlarınız silinsin mi?</string>
     <string name="delete_your_note">Notunuz silinsin mi?</string>

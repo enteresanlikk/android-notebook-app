@@ -1,7 +1,10 @@
 package com.enteresanlikk.notdefteri;
 
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -39,6 +42,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
     TimePickerDialog tpd;
     DatePickerDialog dpd;
     Calendar cal;
+    NotificationManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +55,12 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
         noteId = getIntent().getExtras().getInt("id");
+
+        manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationChannel channel = new NotificationChannel(f.CHANNEL_ID, f.CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+        manager.createNotificationChannel(channel);
+        manager.cancel(noteId);
 
         btn_edit = (Button) findViewById(R.id.btn_edit);
         btn_reminder_date = (Button) findViewById(R.id.btn_reminder_date);
@@ -153,6 +161,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
 
     public void setNoteValues() {
         HashMap<String, String> note = db.detail(Integer.valueOf(noteId));
+
         title = note.get("title");
         content = note.get("content");
         dateStr = note.get("date");

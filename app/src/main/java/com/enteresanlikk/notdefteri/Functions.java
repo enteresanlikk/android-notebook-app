@@ -3,17 +3,16 @@ package com.enteresanlikk.notdefteri;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.widget.Toast;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class Functions extends Activity {
-    Context mContext;
+    public String CHANNEL_ID = "Furkan ID"; //Channel ID
+    public String CHANNEL_NAME = "Furkan ADI"; //Channel Ad
 
+    Context mContext;
     public Functions(Context mContext)
     {
         this.mContext = mContext;
@@ -22,6 +21,14 @@ public class Functions extends Activity {
     public void go(Class goClass) {
         Intent i = new Intent(mContext.getApplicationContext(), goClass);
         mContext.startActivity(i);
+    }
+
+    public void finishApp(){
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent);
+        finish();
     }
 
     public void message(String message) {

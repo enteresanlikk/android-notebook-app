@@ -14,16 +14,18 @@ import java.util.HashMap;
 
 public class Database extends SQLiteOpenHelper {
 
-    private static String DB_NAME = "Notebook.db";
-    private static String TABLE_NAME = "tbl_note";
+    public static String DB_NAME = "Notebook.db";
+    String TABLE_NAME = "tbl_note";
+    Functions f;
 
     public Database(Context context) {
         super(context, DB_NAME, null, 1);
+        f = new Functions(context);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = String.format("CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, content TEXT NOT NULL, reminder INTEGER DEFAULT 0, reminder_date TEXT, reminder_time TEXT, status INTEGER DEFAULT 1, date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);", TABLE_NAME);
+        String query = String.format("CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, content TEXT NOT NULL, reminder INTEGER DEFAULT 0, reminder_date TEXT, reminder_time TEXT, status INTEGER DEFAULT 1, date TEXT);", TABLE_NAME);
         db.execSQL(query);
     }
 
@@ -43,6 +45,8 @@ public class Database extends SQLiteOpenHelper {
         cv.put("reminder", reminder);
         cv.put("reminder_date", reminder_date);
         cv.put("reminder_time", reminder_time);
+        String date = f.getDate()+" "+f.getTime();
+        cv.put("date", date);
 
         long res = db.insert(TABLE_NAME, null, cv);
 
@@ -128,7 +132,8 @@ public class Database extends SQLiteOpenHelper {
             cv.put("reminder", reminder);
             cv.put("reminder_date", reminder_date);
             cv.put("reminder_time", reminder_time);
-            cv.put("date", (new Timestamp((new Date()).getTime())).toString());
+            String date = f.getDate()+" "+f.getTime();
+            cv.put("date", date);
 
 
             long res = db.update(TABLE_NAME, cv, "id = ?", new String[] {
