@@ -137,8 +137,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     }
 
     public void showPopupMenu(View view,int position) {
-        // inflate menu
-        PopupMenu popup = new PopupMenu(mContext,view);
+        PopupMenu popup = new PopupMenu(mContext, view);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.note_card_menu, popup.getMenu());
         popup.setOnMenuItemClickListener(new PopupMenuItemClickListener(position));

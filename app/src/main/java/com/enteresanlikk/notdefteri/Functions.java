@@ -3,6 +3,8 @@ package com.enteresanlikk.notdefteri;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.util.TypedValue;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -53,5 +55,10 @@ public class Functions extends Activity {
         String retVal = String.valueOf(num);
         if(num < 10) retVal = "0"+num;
         return retVal;
+    }
+
+    public int dpToPx(int dp) {
+        Resources r = mContext.getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 }

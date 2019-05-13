@@ -2,6 +2,7 @@
     <string name="app_name">Not Defteri</string>
     <string name="title_activity_add">Ekle</string>
     <string name="title_activity_edit">Düzenle</string>
+    <string name="title_activity_recycle_list">Çöp Kutusu</string>
 
     <string name="yes">Evet</string>
     <string name="no">Hayır</string>
@@ -20,23 +21,45 @@
     <string name="reminder_remove">Hatırlatıcıyı kaldır</string>
     <string name="reminder_date">Tarih</string>
     <string name="reminder_time">Saat</string>
-    <string name="last_update">Son güncelleme: </string>
+    <string name="last_update"><b>Son güncelleme:</b> </string>
+    <string name="deleted_date"><b>Silinme tarihi:</b> </string>
 
     <string name="delete_all_your_notes">Bütün notlarınız silinsin mi?</string>
+    <string name="delete_all_your_reminders">Bütün hatırlatıcılar silinsin mi?</string>
+    <string name="delete_permanent_all_your_notes">Bütün notlarınız kalıcı olarak silinsin mi?</string>
     <string name="delete_your_note">Notunuz silinsin mi?</string>
+    <string name="delete_permanent_your_note">Notunuz kalıcı olarak silinsin mi?</string>
+    <string name="restore_your_note">Notunuz geri yüklensin mi?</string>
+    <string name="restore_your_all_note">Bütün notlarınız geri yüklensin mi?</string>
 
-    <string name="notYok">Notunuz bulunamadı.</string>
+    <string name="noNote">Notunuz bulunamadı.</string>
+    <string name="recycleNoNote">Silinmiş notunuz bulunamadı.</string>
 
     <string name="menu_delete_all">Hepsini sil</string>
+    <string name="menu_delete_all_reminder">Hatırlatıcıları sil</string>
+    <string name="menu_trash">Çöp kutusu</string>
+    <string name="menu_restore_all">Hepsini geri yükle</string>
 
     <string name="noEmptyTitle">Başlık boş bırakılamaz.</string>
     <string name="noEmptyContent">İçerik boş bırakılamaz.</string>
+
     <string name="successAdded">Notunuz eklendi.</string>
     <string name="errorAdded">Notunuz eklenirken hata oluştu.</string>
     <string name="successUpdated">Notunuz güncellendi.</string>
     <string name="errorUpdated">Notunuz güncellenirken hata oluştu.</string>
+
     <string name="successAllDeleted">Notlarınız silindi.</string>
     <string name="errorAllDeleted">Notlarınız silinirken hata oluştu.</string>
+    <string name="successAllReminderDeleted">Hatırlatıcılar silindi.</string>
+    <string name="errorAllReminderDeleted">Hatırlatıcılar silinirken hata oluştu.</string>
+
+    <string name="successReminderDeleted">Notunuz kalıcı olarak silindi.</string>
+    <string name="errorReminderDeleted">Notunuz kalıcı olarak silinirken hata oluştu.</string>
+    <string name="successRestored">Notunuz geri yüklendi.</string>
+    <string name="errorRestored">Notunuz geri yüklenirken hata oluştu.</string>
+    <string name="successAllRestored">Notlarınız geri yüklendi.</string>
+    <string name="errorAllRestored">Notlarınız geri yüklenirken hata oluştu.</string>
+
     <string name="successDeleted">Notunuz silindi.</string>
     <string name="errorDeleted">Notunuz silinirken hata oluştu.</string>
     <string name="noEmptyReminderDate">Hatırlatıcı tarihi boş bırakılamaz.</string>

@@ -79,6 +79,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
+            this.finish();
             f.go(MainActivity.class);
         }
         return super.onOptionsItemSelected(item);
@@ -104,6 +105,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
                 Boolean status = db.add(title, content, reminder, reminder_date, reminder_time);
                 if(status) {
                     f.message(getString(R.string.successAdded));
+                    this.finish();
                     f.go(MainActivity.class);
                 } else {
                     f.message(getString(R.string.errorAdded));
@@ -162,5 +164,11 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
 
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        this.finish();
+        f.go(MainActivity.class);
     }
 }

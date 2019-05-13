@@ -30,7 +30,7 @@
                 android:textSize="14sp"
                 android:layout_margin="12dp"
                 android:paddingLeft="20dp"
-                android:paddingRight="20dp"/>
+                android:paddingRight="20dp" />
 
         </android.support.v7.widget.Toolbar>
 

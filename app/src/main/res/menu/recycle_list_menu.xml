@@ -6,15 +6,8 @@
         android:id="@+id/delete_all"
         android:title="@string/menu_delete_all"
         app:showAsAction="never"/>
-
     <item
-        android:id="@+id/delete_all_reminder"
-        android:title="@string/menu_delete_all_reminder"
+        android:id="@+id/restore_all"
+        android:title="@string/menu_restore_all"
         app:showAsAction="never"/>
-
-    <item
-        android:id="@+id/recycle"
-        android:title="@string/menu_trash"
-        app:showAsAction="always"
-        android:icon="@drawable/trash_icon"/>
 </menu>

@@ -190,6 +190,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
+            this.finish();
             f.go(MainActivity.class);
         }
         return super.onOptionsItemSelected(item);
@@ -214,6 +215,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                 Boolean status = db.edit(noteId, title, content, reminder, reminder_date, reminder_time);
                 if(status) {
                     f.message(getString(R.string.successUpdated));
+                    this.finish();
                     f.go(MainActivity.class);
                 } else {
                     f.message(getString(R.string.errorUpdated));
@@ -228,5 +230,11 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                 tpd.show();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        this.finish();
+        f.go(MainActivity.class);
     }
 }

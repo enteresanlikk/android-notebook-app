@@ -14,6 +14,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Timer;
@@ -53,7 +54,7 @@ public class NotificationService extends Service {
             public void run() {
                 control();
             }
-        },0, 60000);
+        },0, 30000);
     }
 
     private void control() {
@@ -63,11 +64,14 @@ public class NotificationService extends Service {
                 String date = f.getDate();
                 String time = f.getTime();
 
-                HashMap<String, String> note = db.detailWithReminder(date, time);
-                if(!note.isEmpty()) {
-                    Integer id = Integer.valueOf(note.get("id"));
-                    senNotification(id, note.get("title"), note.get("content"));
-                    //db.deleteReminder(id); //hatırlatıcıyı silmek için
+                ArrayList<HashMap<String, String>> notes = db.detailWithReminder(date, time);
+                if(notes.size() > 0) {
+                    for(int i=0; i<notes.size(); i++) {
+                        HashMap<String, String> note = notes.get(i);
+                        Integer id = Integer.valueOf(note.get("id"));
+                        senNotification(id, note.get("title"), note.get("content"));
+                        db.deleteReminder(id); //hatırlatıcıyı silmek için
+                    }
                 }
             }
         });

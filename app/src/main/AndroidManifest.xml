@@ -14,11 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".RecycleListActivity"
+            android:label="@string/title_activity_recycle_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".EditActivity"
             android:label="@string/title_activity_edit"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name=".AddActivity"
             android:label="@string/title_activity_add"
@@ -38,19 +42,17 @@
 
         <service android:name=".NotificationService">
             <intent-filter>
-                <action android:name="test.package.Monitor">
-                </action>
+                <action android:name="test.package.Monitor"></action>
             </intent-filter>
         </service>
+
         <receiver android:name=".AutoStartNotificationService">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED">
-                </action>
-                <category android:name="android.intent.category.HOME">
-                </category>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+
+                <category android:name="android.intent.category.HOME"></category>
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>
