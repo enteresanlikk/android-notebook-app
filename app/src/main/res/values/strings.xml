@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Not Defteri</string>
+    <string name="title_my_notes">Notlarım</string>
     <string name="title_activity_add">Ekle</string>
     <string name="title_activity_edit">Düzenle</string>
     <string name="title_activity_recycle_list">Çöp Kutusu</string>
@@ -26,7 +27,7 @@
 
     <string name="delete_all_your_notes">Bütün notlarınız silinsin mi?</string>
     <string name="delete_all_your_reminders">Bütün hatırlatıcılar silinsin mi?</string>
-    <string name="delete_permanent_all_your_notes">Bütün notlarınız kalıcı olarak silinsin mi?</string>
+    <string name="delete_permanent_all_your_notes">Çöp kutusundaki notlarınız kalıcı olarak silinsin mi?</string>
     <string name="delete_your_note">Notunuz silinsin mi?</string>
     <string name="delete_permanent_your_note">Notunuz kalıcı olarak silinsin mi?</string>
     <string name="restore_your_note">Notunuz geri yüklensin mi?</string>

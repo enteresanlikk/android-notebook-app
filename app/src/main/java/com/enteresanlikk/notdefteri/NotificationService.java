@@ -26,8 +26,9 @@ public class NotificationService extends Service {
     Database db;
     Functions f;
 
-    int NOTIFICATION_ID = 52; //Notification ID
+    int NOTIFICATION_ID = 52;
     NotificationManager manager;
+    Integer CONTROL_TIME = 1000;
 
     @Nullable
     @Override
@@ -54,7 +55,7 @@ public class NotificationService extends Service {
             public void run() {
                 control();
             }
-        },0, 30000);
+        },0, CONTROL_TIME);
     }
 
     private void control() {

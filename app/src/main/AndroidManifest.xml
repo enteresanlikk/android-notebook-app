@@ -16,6 +16,7 @@
         <activity
             android:name=".RecycleListActivity"
             android:label="@string/title_activity_recycle_list"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".EditActivity"
@@ -31,6 +32,7 @@
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name=".MainActivity"
+            android:label="@string/title_my_notes"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

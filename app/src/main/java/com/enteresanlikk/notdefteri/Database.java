@@ -225,7 +225,9 @@ public class Database extends SQLiteOpenHelper {
         Boolean retVal = false;
         SQLiteDatabase db = this.getWritableDatabase();
 
-        long res = db.delete(TABLE_NAME, null, null);
+        long res = db.delete(TABLE_NAME, "status = ?", new String[] {
+                "0"
+            });
 
         if (res != -1) retVal = true;
 
